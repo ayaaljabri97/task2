@@ -1,0 +1,61 @@
+
+
+
+<body>
+
+
+
+    <br>
+    <br>
+    
+    <div class="sidebar" style="width:15%; margin-right: 480px;" >
+      <img src="assets/images/glop.jpg" href="" class="img">
+     <hr class="hr">
+      <br>
+      <a href="#" class="bt1" style="text-align: center;">Home</a>
+      <br>
+      <br>
+      <a  class="bt2" routerLink="aboutus" >AboutUS</a>
+      <br>
+      <br>
+      <a class="bt2"  routerLink="contactus" >ContactUS</a>
+      <br>
+      <br>
+   
+    </div>
+      
+     
+    <div class="card" >
+     <h1 style="font-size: 30px; text-align: center; padding-top: 30px;">Managemt Information System</h1>
+      <img src="assets/images/glop.jpg" alt="Avatar  " style="height: 140px; width: 140px; margin-left:180px; padding-top: 20px;" >
+      <div class="container">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+            <br>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <br>
+             <input type="email" class="form-control" name="email"  email id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            
+          </div>
+          <div class="form-group">
+            <br>
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" name="username" id="exampleInputPassword1" placeholder="Password">
+            
+           
+          </div>
+          <div class="form-check">
+            <br>
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <br>
+          <br>
+          <button type="submit" class="btn btn-success" style="width: 300px;" routerLink="adddelitem">Submit</button>
+        </form>
+      </div>
+    </div>
+  
+    
+    </body>
+    

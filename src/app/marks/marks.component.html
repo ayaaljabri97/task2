@@ -1,0 +1,60 @@
+<div class="card mx-auto shadow-lg p-3 mb-5 bg-body rounded" style="width: 60%; height: 600px;">
+
+    <div class="row m-3">
+  
+      <div class="col-6">
+  
+        <input type="text" class="form-control" placeholder="Enter Task" [(ngModel)]="task" (input)="onChange()" />
+  
+      </div>
+  
+      <div class="col-1">
+  
+        <button class="btn btn-primary" (click)="addTask()" [disabled]="!isValid()">Add</button>
+  
+      </div>
+  
+      <div class="col-2">
+  
+        <button class="btn btn-danger" (click)="deleteAllTasks()">Delete All</button>
+  
+      </div>
+  
+    </div>
+  
+    <div class="alert alert-danger mt-2" *ngIf="errorMessage">{{ errorMessage }}</div>
+  
+   
+  
+    <div class="form-control" *ngFor="let item of list; let i = index" >
+  
+      <div class="col-1">
+  
+        <button class="dbtn" (click)="deleteTask(i)">Delete</button>
+  
+      </div>
+  
+      <div class="col-5">
+  
+        <div class="form-check my-1">
+  
+          <input class="form-check-input" (change)="changeStatus(i, item.IsComplete)" type="checkbox" [checked]="item.IsComplete"
+  
+            id="{{ 'checkbox-' + i }}">
+  
+          <label class="form-check-label" for="{{ 'checkbox-' + i }}">
+  
+            <ng-container *ngIf="item.IsComplete; else notComplete">{{ item.TaskName }}</ng-container>
+  
+            <ng-template #notComplete>{{ item.TaskName }}</ng-template>
+  
+          </label>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+
